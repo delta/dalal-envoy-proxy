@@ -1,0 +1,11 @@
+name: validate-envoy-configuration
+on: [push, pull_request]
+
+jobs:
+  validate-envoy-conf:
+    runs-on: ubuntu-latest
+    container: envoyproxy/envoy:v1.20-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: validate envoy configuration
+        run: envoy --mode validate -c ./*.yaml
