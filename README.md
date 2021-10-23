@@ -1,5 +1,7 @@
 ## envoy proxy for grpc-web client
 
+![flow](./images/flow.png)
+
 ### Prerequisites
 
 - envoy proxy [installtion guide](https://www.envoyproxy.io/docs/envoy/latest/start/install)
