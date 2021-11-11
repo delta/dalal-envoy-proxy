@@ -8,4 +8,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: validate envoy configuration
-        run: envoy --mode validate -c ./*.yaml
+        run: ./test.sh
