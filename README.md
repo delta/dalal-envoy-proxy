@@ -20,13 +20,26 @@ envoy --mode validate -c <filename.yaml>
 
 ### Run Envoy
 
+- Run `cp .sample.env .env` and fill the env variables in .env
+
 - development
 
-  ```bash
-  envoy -c dev.envoy.yaml
-  ```
+  - local
+
+    ```bash
+    ./start-envoy.sh
+    ```
+
+  - docker
+    - build image
+    ```bash
+      docker build -f ./dockerfiles/Dockerfile.dev -t dalal-envoy .
+    ```
+    - run container
+    ```bash
+      docker run --add-host host.docker.internal:host-gateway -d --name dalal-envoy -p 3000:3000 dalal-envoy
+    ```
 
 ### TODO
 
 - [ ] production envoy configuration
-- [ ] dockerize envoy (development and production)

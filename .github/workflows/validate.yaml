@@ -4,8 +4,8 @@ on: [push, pull_request]
 jobs:
   validate-envoy-conf:
     runs-on: ubuntu-latest
-    container: envoyproxy/envoy:v1.20-latest
+    container: envoyproxy/envoy:v1.20.0
     steps:
       - uses: actions/checkout@v2
       - name: validate envoy configuration
-        run: envoy --mode validate -c ./*.yaml
+        run: ./test.sh

@@ -50,8 +50,8 @@ static_resources:
               - endpoint:
                   address:
                     socket_address:
-                      address: 0.0.0.0
-                      port_value: 8000
+                      address: DALAL_BACKEND_HOST
+                      port_value: DALAL_BACKEND_PORT
       transport_socket:
         name: envoy.transport_sockets.tls
         typed_config:

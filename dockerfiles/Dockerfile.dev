@@ -1,0 +1,6 @@
+FROM envoyproxy/envoy:v1.20.0
+COPY dev.envoy.yaml .
+COPY .env .
+COPY ./dockerfiles/docker-entry.sh .
+RUN ./docker-entry.sh
+CMD envoy -c envoy.yaml
