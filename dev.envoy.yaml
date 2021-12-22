@@ -22,8 +22,12 @@ static_resources:
                           route:
                             # upstream, the backend (check clusters)
                             cluster: dalal_backend
+                            # disabling timeouts for grpc streaming
                             timeout: 0s
+                            idle_timeout: 0s
+                            max_grpc_timeout: 0s
                             max_stream_duration:
+                              max_stream_duration: 0s
                               grpc_timeout_header_max: 0s
                       # cors configuration
                       cors:
